@@ -2,7 +2,6 @@
  * Feature: User Search
  * Description: Technical logic for searching users based on filters.
  *...
- *...
  */
 
 export interface UserSearchParams {
