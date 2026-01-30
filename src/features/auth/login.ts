@@ -1,4 +1,3 @@
-//
 export class LoginFeature {
     openLoginPage() {
         // Navigate to the login page
