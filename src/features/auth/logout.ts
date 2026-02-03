@@ -1,4 +1,3 @@
-// Triggering sync for hard preservation test
 export function logout() {
     // Clear authentication tokens
     localStorage.removeItem('accessToken');
