@@ -19,4 +19,9 @@ export class LoginFeature {
         // Verify user is logged in successfully
         //
     }
+
+    verifyLoginError(expectedMessage: string) {
+    // Verify that an error message is displayed on failed login
+    // and that it matches the expected text
+}
 }
