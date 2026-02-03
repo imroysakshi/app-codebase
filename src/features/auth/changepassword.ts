@@ -35,3 +35,31 @@ export function forcePasswordChange() {
     // Redirect user to change password screen
     window.location.href = '/change-password';
 }
+
+/**
+ * Validate password strength before allowing password change
+ */
+export function validatePasswordStrength(password: string): boolean {
+    // Minimum length requirement
+    if (password.length < 8) {
+        return false;
+    }
+
+    // Must contain at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+        return false;
+    }
+
+    // Must contain at least one number
+    if (!/[0-9]/.test(password)) {
+        return false;
+    }
+
+    // Must contain at least one special character
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        return false;
+    }
+
+    return true;
+}
+
