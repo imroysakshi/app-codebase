@@ -56,3 +56,6 @@ export async function refreshToken(): Promise<string> {
     }
 }
 
+export function logRefreshCalled(): void {
+  console.log('refreshToken function was called');
+}
