@@ -31,3 +31,28 @@ export function handleRefreshTokenFailure() {
 
     window.location.href = '/login';
 }
+
+export async function refreshToken(): Promise<string> {
+    try {
+        const response = await fetch('/api/auth/refresh', {
+            method: 'POST',
+            credentials: 'include', // important if refresh token is in cookies
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to refresh token');
+        }
+
+        const data = await response.json();
+
+        // assuming API returns { accessToken: string }
+        return data.accessToken;
+    } catch (error) {
+        console.error('Refresh token error:', error);
+        throw error;
+    }
+}
+
