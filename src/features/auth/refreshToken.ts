@@ -1,5 +1,5 @@
 /**
- * Refresh the access token using a refresh token
+ * Refresh the access token using a refresh token..
  */
 export function refreshAccessToken() {
     const refreshToken = localStorage.getItem('refreshToken');
