@@ -57,5 +57,9 @@ export async function refreshToken(): Promise<string> {
 }
 
 export function logRefreshCalled(): void {
-  console.log('refreshToken function was called');
+    console.log('refreshToken function was called');
+}
+
+export function getRefreshStatus(): string {
+    return 'REFRESH_TRIGGERED';
 }
