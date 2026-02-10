@@ -9,3 +9,13 @@ export function isSessionExpired(lastActiveTime: number, timeoutInMinutes: numbe
 }
 
 
+/**
+ * Handle session timeout by clearing storage and redirecting user
+ */
+export function handleSessionTimeout() {
+    console.warn('Session timed out');
+    localStorage.clear();
+    sessionStorage.clear();
+
+    window.location.href = '/login?reason=session-timeout';
+}
