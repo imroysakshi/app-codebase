@@ -12,4 +12,15 @@ export function verifyOtp(otp: string): boolean {
     return otp === validOtp;
 }
 
+/**
+ * Handle MFA failure by clearing temporary auth state
+ */
+export function handleMfaFailure() {
+    console.warn('MFA verification failed');
 
+    sessionStorage.removeItem('mfaSessionId');
+    sessionStorage.removeItem('mfaAttempts');
+
+    // Redirect user back to login
+    window.location.href = '/login?reason=mfa-failed';
+}
